@@ -1,0 +1,44 @@
+<header>
+	<h2> Posts Favoritos </h2>
+</header>
+
+<!-- 
+<% for (var i in posts) { %>
+	<article>
+		<header>
+			<h3>
+				<a href='/posts/<%= posts[i].id %>' class='titlelink'> <%=
+				posts[i].title %> </a>
+			</h3>
+			<%- posts[i].stars %>
+			<em> <%= posts[i].author && posts[i].author.name || "Sin autor" %> </em>
+		</header>
+
+		<p>
+			<%= posts[i].body.slice(0,300) %> ...
+		</p>
+
+		<footer>
+		
+  		<% if(session.user) { %>  
+          <form method="post" action ='/users/<%= session.user.id %>/favourites/<%= posts[i].id %>'>
+          <input type='hidden' name='_method' value='put'>
+          
+
+          <input type='image'
+                src="/images/nomegusta.gif"
+                onclick="this.form._method.value='delete'; this.form.submit()"/>
+
+          <input type='image'
+                src="/images/megusta.gif"
+                onClick="this.form.submit()"/>
+          </form>
+
+
+         <% } %>
+    
+		</footer>
+	</article>
+<% }; %>
+ -->
+<%- include ../posts/index.ejs%>
